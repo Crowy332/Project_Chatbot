@@ -16,7 +16,7 @@ use App\Models\Setting;
         @elseif (isset($data) && $data != "[]")
             <h1 style="color:{{$text->textcolor}}">have device</h1>
         @endif
-        <a href="/homepage/Setting/AddDevice"><p class="btn btn-primary" style="margin-top:2%">add device<p></a>
+        <a href="{{route('Devices.index')}}"><p class="btn btn-primary" style="margin-top:2%">add device<p></a>
     </div>
 @endforeach
 @endsection

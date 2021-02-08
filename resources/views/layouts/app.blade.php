@@ -7,6 +7,7 @@ use App\Models\Setting;
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="{{ asset('img/logo.png') }}">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -39,6 +40,15 @@ use App\Models\Setting;
         display: inline-block;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     }
+    .logo {
+        height: 13vw;
+        width: 13vw;
+        text-align: center;
+        border-radius: 50%;
+        display: inline-block;
+        margin-top:5%;
+        margin-right:6%;
+    }
     @media only screen and (max-width: 1000px) {
         .circle {
             height: 40vw;
@@ -47,6 +57,15 @@ use App\Models\Setting;
             border-radius: 50%;
             display: inline-block;
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        .logo {
+        height: 35vw;
+        width: 35vw;
+        text-align: center;
+        border-radius: 50%;
+        display: inline-block;
+        margin-top:3%;
+        margin-right:6%;
         }
     }
     /* แต่งตัวอักษร */
@@ -200,7 +219,7 @@ use App\Models\Setting;
         <div class="headerlogo">
             <span class="circle" style="background: linear-gradient(to left, {{$row->color3}}, {{$row->color4}});">
                 <a href="{{ route('Homepage') }}">
-                    <img class="circle" src="https://static.thenounproject.com/png/2722197-200.png" alt="test photo">
+                    <img class="logo" src="{{ asset('img/logo.png') }}" alt="test photo">
                 </a>
             </span>
                 @yield('welcome')
