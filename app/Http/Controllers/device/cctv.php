@@ -62,7 +62,8 @@ class cctv extends Controller
      */
     public function edit($id)
     {
-        //
+        $turn = Device::find($id);
+        return view('Page.cctv',compact(['turn']));
     }
 
     /**
@@ -74,7 +75,11 @@ class cctv extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this-> Validate($request,[
+            'status_device' => ['required', 'boolean'],
+        ]);
+        Device::find($id)->update($request->all());
+        return redirect('homepage/CCTV');
     }
 
     /**

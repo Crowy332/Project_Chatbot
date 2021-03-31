@@ -4,7 +4,8 @@ namespace App\Http\Controllers\device;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\Device;
+use Kreait\Firebase\Factory;
+use Kreait\Firebase\ServiceAccount;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -17,10 +18,16 @@ class light extends Controller
      */
     public function index()
     {
-        $data = Device::where('user_id',Auth::user()->id)
-                        ->where( 'device_type_id','=','4')
-                        ->get();
-        return view('Page.light',compact(['data']));
+        $serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/Firebase.json');
+        $firebase = (new Factory)
+        ->withServiceAccount($serviceAccount)
+        ->withDatabaseUri('https://pj-crowy-default-rtdb.firebaseio.com/')
+        ->create();
+        $db = $firebase->getDatabase();
+            //$reference = $db->getReference('LED/');
+            //$snapshot = $reference->getSnapshot();
+            //$value =  $snapshot->getValue();
+        return view('Page.light',compact(['db']));
     }
 
     /**

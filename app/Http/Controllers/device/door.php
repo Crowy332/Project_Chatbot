@@ -3,8 +3,9 @@
 namespace App\Http\Controllers\device;
 
 use App\Http\Controllers\Controller;
+use Kreait\Firebase\Factory;
 use Illuminate\Http\Request;
-use App\Models\Device;
+use Kreait\Firebase\ServiceAccount;
 use Illuminate\Support\Facades\Auth;
 
 class door extends Controller
@@ -16,10 +17,16 @@ class door extends Controller
      */
     public function index()
     {
-        $data = Device::where('user_id',Auth::user()->id)
-                        ->where( 'device_type_id','=','2')
-                        ->get();
-        return view('Page.door',compact(['data']));
+        $serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/Firebase.json');
+        $firebase = (new Factory)
+        ->withServiceAccount($serviceAccount)
+        ->withDatabaseUri('https://pj-crowy-default-rtdb.firebaseio.com/')
+        ->create();
+        $db = $firebase->getDatabase();
+            //$reference = $db->getReference('LED/');
+            //$snapshot = $reference->getSnapshot();
+            //$value =  $snapshot->getValue();
+        return view('Page.door',compact(['db']));
     }
 
     /**

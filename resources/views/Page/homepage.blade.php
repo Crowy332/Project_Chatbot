@@ -80,11 +80,11 @@ use App\Models\Setting;
 @endsection
 @section('content')
 @foreach ($data as $row)
-    <a href="{{route('CCTV.index')}}"><span class="manuforhomepage" style="background: linear-gradient(to left, {{$row->color3}}, {{$row->color4}});"><img class="imgforhomepage" src="{{ asset('img/CCTV.png') }}"><p class="pforhomepage" style="color:{{$row->textcolor}}">{{ __('CCTV') }}</p></span></a>
+    <!--<a href="{{route('CCTV.index')}}"><span class="manuforhomepage" style="background: linear-gradient(to left, {{$row->color3}}, {{$row->color4}});"><img class="imgforhomepage" src="{{ asset('img/CCTV.png') }}"><p class="pforhomepage" style="color:{{$row->textcolor}}">{{ __('CCTV') }}</p></span></a>-->
     <a href="{{route('Door.index')}}"><span class="manuforhomepage" style="background: linear-gradient(to left, {{$row->color3}}, {{$row->color4}});"><img class="imgforhomepage" src="{{ asset('img/door.png') }}"><p class="pforhomepage" style="color:{{$row->textcolor}}">{{ __('DOOR') }}</p></span></a>
     <a href="{{route('Aircondition.index')}}"><span class="manuforhomepage" style="background: linear-gradient(to left, {{$row->color3}}, {{$row->color4}});"><img class="imgforhomepage" src="{{ asset('img/aircondition.png') }}"><p class="pforhomepageA" style="color:{{$row->textcolor}}">{{ __('AIRCONDITION') }}</p></span></a>
     <a href="{{route('Light.index')}}"><span class="manuforhomepage" style="background: linear-gradient(to left, {{$row->color3}}, {{$row->color4}});"><img class="imgforhomepage" src="{{ asset('img/light.png') }}"><p class="pforhomepage" style="color:{{$row->textcolor}}">{{ __('LIGHT') }}</p></span></a>
     <a href="{{route('Setting')}}"><span class="manuforhomepage" style="background: linear-gradient(to left, {{$row->color3}}, {{$row->color4}});"><img class="imgforhomepage" src="{{ asset('img/setting.png') }}"><p class="pforhomepage" style="color:{{$row->textcolor}}">{{ __('SETTING') }}</p></span></a>
-    <a href="{{route('Dashboard')}}"><span class="manuforhomepage" style="background: linear-gradient(to left, {{$row->color3}}, {{$row->color4}});"><img class="imgforhomepage" src="{{ asset('img/dashborad.png') }}"><p class="pforhomepage" style="color:{{$row->textcolor}}">{{ __('DASHBOARD') }}</p></span></a>
+    <!--<a href="{{route('Dashboard')}}"><span class="manuforhomepage" style="background: linear-gradient(to left, {{$row->color3}}, {{$row->color4}});"><img class="imgforhomepage" src="{{ asset('img/dashborad.png') }}"><p class="pforhomepage" style="color:{{$row->textcolor}}">{{ __('DASHBOARD') }}</p></span></a>-->
     @endforeach
 @endsection

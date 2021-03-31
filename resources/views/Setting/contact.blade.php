@@ -26,14 +26,14 @@ use App\Models\Setting;
 @endsection
 @section('content')
 @foreach ($text as $text)
-<div style="text-align:center" class="col-md-8">
+<div style="text-align:center" >
     <div style="margin-top: 2%">
         <p class="pedit" style="color:{{$text->textcolor}}">Email</p>
-        <p class="pedit" style="color:{{$text->textcolor}}">Blank</p><br>
+        <p class="pedit" style="color:{{$text->textcolor}}">contect@Crowyexam.co.th</p><br>
     </div>
     <div>
         <p class="pedit" style="color:{{$text->textcolor}}">Tel.</p>
-        <p class="pedit" style="color:{{$text->textcolor}}">Blank</p><br>
+        <p class="pedit" style="color:{{$text->textcolor}}">063-2543042</p><br>
     </div>
     <div>
         <p class="pedit" style="color:{{$text->textcolor}}">Place</p>

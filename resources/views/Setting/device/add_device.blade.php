@@ -7,6 +7,7 @@
     <form method="POST" action="{{ route('Devices.store') }}" style="margin-top: 3%">
         @csrf
         <input type="hidden" name="user_id" value="{{Auth::user()->id}}">
+        <input type="hidden" name="status_device" value="0">
         <div class="form-group row">
             <label for="name" class="col-md-5 col-form-label text-md-right">{{ __('Device name') }}</label>
 
@@ -19,9 +20,9 @@
             <label for="device_type_id" class="col-md-5 col-form-label text-md-right">{{ __('Device type') }}</label>
             <div  class="col-md-3 " >
                 <select name="device_type_id" id="device_type_id" class="custom-select my-1 mr-sm-2">
-                    <option value="1" class="form-control">
+                    <!--<option value="1" class="form-control">
                         <label for="1" class="col-md-4 col-form-label text-md-right">{{ __('CCTV') }}</label>
-                    </option>
+                    </option>-->
                     <option value="2" class="form-control">
                         <label for="2" class="col-md-4 col-form-label text-md-right">{{ __('Door') }}</label>
                     </option>

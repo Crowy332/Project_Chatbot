@@ -27,7 +27,7 @@ use App\Models\Setting;
     @foreach ($text as $row)
     <a href="{{route('ChangeColor.edit',$row->user_id)}}"><p class="p-setting" style="color:{{$row->textcolor}}">{{ __('Change color') }}</p></a>
     <a href="{{route('Devices.index')}}" ><p class="p-setting" style="color:{{$row->textcolor}}">{{ __('Add Device') }}</p></a>
-    <a href="{{route('TechBot')}}"><p class="p-setting" style="color:{{$row->textcolor}}">{{ __('Tech bot') }}</p></a>
+    <!--<a href="{{route('TechBot')}}"><p class="p-setting" style="color:{{$row->textcolor}}">{{ __('Tech bot') }}</p></a>-->
     <a href="{{route('Privacy.index')}}"><p class="p-setting" style="color:{{$row->textcolor}}">{{ __('Privacy') }}</p></a>
     <a href="{{route('About')}}"><p class="p-setting" style="color:{{$row->textcolor}}">{{ __('About') }}</p></a>
     <a href="{{ route('logout') }}"

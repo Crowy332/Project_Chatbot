@@ -40,7 +40,7 @@
         </div>
         {{ method_field('PUT') }}
         <div class="form-group row mb-0">
-            <div class="col-md-6 offset-md-3" style="margin-top: 3%;">
+            <div class="col-md-6 offset-md-3" style="margin-top: 1%;">
                 <button type="submit" class="btn btn-primary">
                     {{ __('Submit') }}
                 </button>

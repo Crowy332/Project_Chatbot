@@ -41,6 +41,7 @@ class devices extends Controller
         $request -> validate([
             'name' => ['required', 'string', 'max:255'],
             'device_type_id' => ['required', 'string', 'max:255'],
+            'status_device' => ['required', 'boolean'],
         ]);
         Device::create($request->all());
         return redirect('homepage/Setting/Devices');

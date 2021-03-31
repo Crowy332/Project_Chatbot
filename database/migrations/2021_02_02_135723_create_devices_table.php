@@ -17,6 +17,7 @@ class CreateDevicesTable extends Migration
             $table->id();
             $table->string('name');
             $table->foreignId('user_id');
+            $table->boolean('status_device');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreignId('device_type_id');
             $table->foreign('device_type_id')->references('id')->on('device_types')->onDelete('cascade');

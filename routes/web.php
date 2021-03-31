@@ -33,6 +33,13 @@ Route::resource('/homepage/Door','device\door');
 Route::resource('/homepage/Aircondition','device\air');
 Route::resource('/homepage/Light','device\light');
 Route::view('/homepage/Dashboard','Page.Dashboard')->name('Dashboard');
+Route::view('/test','test')->name('test');
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('firebase','FirebaseController@index');
+
+Route::get('firebase-test', 'FirebaseController@getData');
+
+Route::match(['get', 'post'], '/botman', 'BotManController@handle');
